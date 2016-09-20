@@ -61,17 +61,17 @@
             $this->assertEquals($test_patient, $result[0]);
         }
 
-        // function test_getPatients()
+        // function test_getDoctors()
         // {
         //     $name = "Fannie Mae";
         //     $id = null;
         //     $dob = "1962-02-26";
-        //     $test_patient = new Patient($name, $id);
+        //     $test_patient = new Doctor($name, $id);
         //     $test_patient->save();
         //     $name = "Dr. Amanda Franklin";
         //     $id = null;
         //     $dob = "Audiology";
-        //     $test_patient2 = new Patient($name, $id);
+        //     $test_patient2 = new Doctor($name, $id);
         //     $test_patient2->save();
         //
         //

@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="/css/styles.css" rel="stylesheet" type="text/css">
+        <script src="/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+        <script src="/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/js/scripts.js" type="text/javascript"></script>        <title></title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Add Patient or Doctor information</h1>
+            <h3>Enter Doctor's name and Specialty</h3>
+            {% if doctors is not empty %}
+                <ul class="list-group">
+                    {% for doctor in doctors %}
+                        <li class="list-group-item"><a href="/doctors/{{ doctor.getId }}">{{ doctor.getName }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+              <p>There are no doctors yet!</p>
+            {% endif %}
+
+            <form action="/doctors" method="post">
+                <label for="doctor_name">Category name:</label>
+                <input id="doctor_name" name="doctor_name" type="text" class="form-control">
+
+                <button type="submit" class="btn">Add doctor</button>
+            </form>
+
+            <h3>Enter Patient's name and Birthday</h3>
+            {% if patients is not empty %}
+                <ul class="list-group">
+                    {% for patient in patients %}
+                        <li class="list-group-item"><a href="/patients/{{ patient.getId }}">{{ patient.getName }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+              <p>There are no patients yet!</p>
+            {% endif %}
+
+            <form action="/patients" method="post">
+                <label for="patient_name">Category name:</label>
+                <input id="patient_name" name="patient_name" type="text" class="form-control">
+
+                <button type="submit" class="btn">Add patient</button>
+            </form>
+
+        </div>
+    </body>
+</html>
